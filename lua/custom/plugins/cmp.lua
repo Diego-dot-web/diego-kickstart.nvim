@@ -2,7 +2,7 @@ return {
   {
     'saghen/blink.cmp',
     -- optional: provides snippets for the snippet source
-    dependencies = { 'rafamadriz/friendly-snippets' },
+    dependencies = { 'rafamadriz/friendly-snippets', 'saghen/blink.compat' },
 
     version = '*',
 
@@ -17,7 +17,22 @@ return {
       },
 
       sources = {
-        default = { 'lsp', 'path', 'snippets', 'buffer' },
+        default = { 'lsp', 'path', 'snippets', 'buffer', 'obsidian', 'obsidian_new', 'obsidian_tags' },
+
+        providers = {
+          obsidian = {
+            name = 'obsidian',
+            module = 'blink.compat.source',
+          },
+          obsidian_new = {
+            name = 'obsidian_new',
+            module = 'blink.compat.source',
+          },
+          obsidian_tags = {
+            name = 'obsidian_tags',
+            module = 'blink.compat.source',
+          },
+        },
       },
     },
     opts_extend = { 'sources.default' },

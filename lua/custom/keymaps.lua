@@ -35,3 +35,9 @@ vim.keymap.set({ 's', 'x', 'i', 'n' }, '<C-s>', '<cmd>w<CR><Esc>')
 
 vim.keymap.set({ 's', 'x', 'n' }, 'j', 'gj')
 vim.keymap.set({ 's', 'x', 'n' }, 'k', 'gk')
+
+-- autocenter screen
+vim.keymap.set('n', '<C-u>', '<C-u>zz')
+vim.keymap.set('n', '<C-d>', '<C-d>zz')
+vim.keymap.set('n', '<C-f>', '<C-f>zz')
+vim.keymap.set('n', '<C-b>', '<C-b>zz')

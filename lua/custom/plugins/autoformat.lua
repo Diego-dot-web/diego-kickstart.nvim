@@ -1,6 +1,7 @@
 return {
   { -- Autoformat
     'stevearc/conform.nvim',
+    lazy = false,
     event = { 'BufWritePre' },
     cmd = { 'ConformInfo' },
     dependencies = { 'williamboman/mason.nvim' },
@@ -37,8 +38,14 @@ return {
         -- Conform can also run multiple formatters sequentially
         -- python = { "isort", "black" },
         html = { 'prettier' },
+        sql = { 'sqlfmt' },
         -- You can use 'stop_after_first' to run the first available formatter from the list
         javascript = { 'prettier', 'prettierd', stop_after_first = true },
+
+        xml = { 'xmlformatter' },
+        java = { 'google-java-format', lsp_fallback = true },
+        yaml = { 'prettier', 'prettierd', stop_after_first = true },
+        http = { 'kulala-fmt' },
       },
     },
   },

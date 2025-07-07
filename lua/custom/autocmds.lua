@@ -6,3 +6,12 @@ vim.api.nvim_create_autocmd('TextYankPost', {
     vim.highlight.on_yank()
   end,
 })
+
+vim.cmd [[set statusline+=%{wordcount().words}\ words]]
+
+vim.api.nvim_create_autocmd('BufWritePre', {
+  pattern = '*.java',
+  callback = function()
+    vim.lsp.buf.format { async = false }
+  end,
+})

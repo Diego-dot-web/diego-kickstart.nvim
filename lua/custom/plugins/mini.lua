@@ -17,25 +17,25 @@ return {
         return '%2l:%-2v'
       end
 
-      require('mini.files').setup {
-        mappings = {
-          go_in = '',
-          go_in_plus = 'l',
-        },
+      -- require('mini.files').setup {
+      --   mappings = {
+      --     go_in = '',
+      --     go_in_plus = 'l',
+      --   },
+      --
+      --   windows = {
+      --     preview = true,
+      --     width_preview = 50,
+      --   },
+      -- }
 
-        windows = {
-          preview = true,
-          width_preview = 50,
-        },
-      }
-
-      vim.keymap.set('n', '<C-e>', function()
-        if not MiniFiles.get_explorer_state() then
-          MiniFiles.open()
-        else
-          MiniFiles.close()
-        end
-      end)
+      -- vim.keymap.set('n', '<C-e>', function()
+      --   if not MiniFiles.get_explorer_state() then
+      --     MiniFiles.open()
+      --   else
+      --     MiniFiles.close()
+      --   end
+      -- end)
 
       require('mini.pairs').setup()
       require('mini.icons').setup()

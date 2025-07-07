@@ -1,6 +1,8 @@
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
+vim.g.omni_sql_no_default_maps = 1
+
 vim.g.have_nerd_font = true
 
 vim.opt.number = true
@@ -35,10 +37,30 @@ vim.opt.splitbelow = true
 --  See `:help 'list'`
 --  and `:help 'listchars'`
 vim.opt.list = true
-vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
+vim.opt.listchars = {
+  tab = '│ ', -- línea vertical para tabulaciones
+  trail = '·', -- punto para espacios al final
+  extends = '⟩', -- cuando la línea continúa a la derecha
+  precedes = '⟨', -- cuando la línea continúa a la izquierda
+  nbsp = '␣', -- espacio no separable
+}
 
 vim.opt.inccommand = 'split'
 
 vim.opt.cursorline = true
 
-vim.opt.scrolloff = 10
+vim.opt.scrolloff = 4
+
+vim.opt.termguicolors = true
+
+vim.opt.expandtab = true
+
+vim.g.autoformat = true
+
+vim.opt.smartindent = true
+vim.opt.autoindent = true
+vim.opt.tabstop = 2
+vim.opt.shiftwidth = 2
+vim.opt.linebreak = true
+vim.opt.preserveindent = true
+vim.opt.wrap = true

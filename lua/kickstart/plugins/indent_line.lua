@@ -3,6 +3,7 @@ return {
     'lukas-reineke/indent-blankline.nvim',
     -- Enable `lukas-reineke/indent-blankline.nvim`
     -- See `:help ibl`
+    lazy = false,
     main = 'ibl',
     config = function()
       local highlight = {
