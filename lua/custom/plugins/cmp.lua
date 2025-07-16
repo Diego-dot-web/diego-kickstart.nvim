@@ -9,7 +9,7 @@ return {
     ---@module 'blink.cmp'
     ---@type blink.cmp.Config
     opts = {
-      keymap = { preset = 'default' },
+      keymap = { preset = 'default', ['<CR>'] = { 'accept', 'fallback' } },
 
       appearance = {
         use_nvim_cmp_as_default = true,
