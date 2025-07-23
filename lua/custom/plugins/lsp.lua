@@ -178,14 +178,13 @@ return {
                 runtimes = {
                   {
                     name = 'java-21-opejdk',
-                    path = '/usr/lib/jvm/java-21-openjdk',
+                    path = '/usr/lib/jvm/java-17-openjdk',
                   },
                 },
               },
               cmd = {
-                '/usr/lib/jvm/java-21-openjdk/bin/java',
+                '/usr/lib/jvm/java-17-openjdk/bin/java',
                 '-javaagent:' .. vim.fn.expand '~/.local/share/nvim/mason/packages/jdtls/lombok.jar',
-                -- JDTLS options
                 '-Declipse.application=org.eclipse.jdt.ls.core.id1',
                 '-Dosgi.bundles.defaultStartLevel=4',
                 '-Declipse.product=org.eclipse.jdt.ls.core.product',
@@ -198,9 +197,9 @@ return {
                 '--add-opens',
                 'java.base/java.lang=ALL-UNNAMED',
                 '-jar',
-                vim.fn.glob '~/.local/share/nvim/mason/packages/jdtls/plugins/org.eclipse.equinox.launcher_*.jar',
+                vim.fn.glob(vim.fn.expand '~/.local/share/nvim/mason/packages/jdtls/plugins/org.eclipse.equinox.launcher_*.jar'),
                 '-configuration',
-                '~/.local/share/nvim/mason/packages/jdtls/config_linux',
+                vim.fn.expand '~/.local/share/nvim/mason/packages/jdtls/config_linux',
                 '-data',
                 vim.fn.stdpath 'cache' .. '/jdtls-workspace',
               },
